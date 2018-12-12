@@ -215,7 +215,8 @@ RCT_EXPORT_METHOD(startDFU:(NSString *)deviceAddress
 
         NSURL * url = [NSURL URLWithString:filePath];
 
-        DFUFirmware * firmware = [[DFUFirmware alloc] initWithUrlToZipFile:url];
+        // DFUFirmware * firmware = [[DFUFirmware alloc] initWithUrlToZipFile:url];
+        DFUFirmware * firmware = [[DFUFirmware alloc] initWithUrlToBinOrHexFile:url urlToDatFile:nil type:4];
 
         DFUServiceInitiator * initiator = [[[DFUServiceInitiator alloc]
                                             initWithCentralManager:centralManager
